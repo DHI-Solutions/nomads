@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.13](https://github.com/DHI-Solutions/nomads/compare/@dhi-solutions/mapbox@0.0.12...@dhi-solutions/mapbox@0.0.13) (2020-03-16)
+
+**Note:** Version bump only for package @dhi-solutions/mapbox
+
+
+
+
+
 ## [0.0.12](https://github.com/DHI-Solutions/nomads/compare/@dhi-solutions/mapbox@0.0.11...@dhi-solutions/mapbox@0.0.12) (2020-03-12)
 
 **Note:** Version bump only for package @dhi-solutions/mapbox
