@@ -11,9 +11,8 @@ import setToken from './lib/setToken';
 
 export default async ({ id, password, config = {} }: Types.ILogin) => {
   try {
-    const endpoint = '/api';
-    const validationEndpoint = endpoint + '/accounts/validation';
-    const tokenEndpoint = endpoint + '/tokens';
+    const validationEndpoint = '/accounts/validation';
+    const tokenEndpoint = '/tokens';
 
     const body = {
       id,

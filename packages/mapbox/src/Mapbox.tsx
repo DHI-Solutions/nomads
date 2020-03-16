@@ -21,22 +21,19 @@ const Mapbox: SFC<Types.Props> = ({
   const hasConfig = !!mapStyle && !!mapboxApiAccessToken;
   const [viewport, setViewport] = useState({});
 
-
-  function handleOnViewPortChange(viewportToSet: any) {
-
-
+  const handleOnViewPortChange = (viewportToSet: any) => {
     if (viewportToSet.parentUpdate) {
       onViewPortChange({
         latitude: viewportToSet.latitude,
         longitude: viewportToSet.longitude,
         pitch: viewportToSet.pitch,
         zoom: viewportToSet.zoom,
-        bearing: viewportToSet.bearing
-      })
+        bearing: viewportToSet.bearing,
+      });
     } else {
       setViewport(viewportToSet);
     }
-  }
+  };
 
   useEffect(() => {
     const handleSetViewport = (viewportToSet: Object) =>
@@ -63,7 +60,7 @@ const Mapbox: SFC<Types.Props> = ({
       controller={mapController}
       width="100%"
       height="100%"
-      onViewportChange={(viewportToSet: any) => handleOnViewPortChange(viewportToSet)}
+      onViewportChange={handleOnViewPortChange}
       {...rest}
     >
       {isSourceVisible && (
