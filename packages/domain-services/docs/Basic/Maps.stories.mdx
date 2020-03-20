@@ -1,0 +1,61 @@
+import { Preview, Story, Meta, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Connectors/Domain Services/Methods/Maps" />
+
+# DHI Solutions
+
+Shared components as a Service. Brought to you by Nomads in DHI Solutions.
+
+> _Nomads [noh-mads] are members of a people or tribe that has no permanent abode but moves about from place to place._
+
+<br />
+
+---
+
+<br />
+<br />
+
+### Domain Services | Maps
+
+This package helps you connect to Domain Services and provides the instance that you can hook into.
+
+1. Import the method:
+
+```javascript
+import { maps } from '@dhi-solutions/domain-services';
+```
+
+2. Use the getImage method to construct the URL for the image.
+
+```javascript
+const YOUR_IMAGE_URL = getImageUrl({
+  bbox: '',
+  crs: '',
+  filePath: '',
+  format: '',
+  height: '',
+  host: '',
+  item: '',
+  layers: '',
+  request: '',
+  service: '',
+  styles: '',
+  timestamp: '',
+  version: '',
+  width: '',
+});
+```
+
+3. With the image URL in place, you can now render the image on top of the map.
+
+```javascript
+const YourComponent = ({ viewport }) => {
+  const layer = new BitmapLayer({
+    id: 'bitmap-layer',
+    bounds: [-122.519, 37.7045, -122.355, 37.829],
+    image: YOUR_IMAGE_URL,
+  });
+
+  return <DeckGL {...viewport} layers={[layer]} />;
+};
+```

@@ -1,5 +1,5 @@
-import getImage from './getImage';
+import getImageUrl from './getImageUrl';
 
 export default {
-  getImage,
+  getImageUrl,
 };
