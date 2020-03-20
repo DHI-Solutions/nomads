@@ -2,13 +2,14 @@ import axios, { AxiosInstance } from 'axios';
 import isArray from 'lodash/isArray';
 
 import authentication from './authentication';
+import maps from './maps';
 
 import * as Types from './types';
 import { setOptions } from './options';
 
 // Subpackages
 
-export { authentication };
+export { authentication, maps };
 
 // Instance
 
