@@ -41,4 +41,7 @@ export interface Props {
   children?: any;
   mapMarkers?: ReactElement[];
   onViewPortChange?: (viewSet: any) => any;
+  childrenIndex?: number;
+  sourceIndex?: number;
+  markersIndex?: number;
 }
