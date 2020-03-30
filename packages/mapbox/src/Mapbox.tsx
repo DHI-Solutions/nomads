@@ -77,8 +77,9 @@ const Mapbox: SFC<Types.Props> = ({
           </Source>
         </div>
       )}
-      <div style={{ position: 'absolute', zIndex: 3 }}></div>
-      {children && children({ viewport })}
+      <div style={{ position: 'absolute', zIndex: 3 }}>
+        {children && children({ viewport })}
+      </div>
     </ReactMapGL>
   );
 };
