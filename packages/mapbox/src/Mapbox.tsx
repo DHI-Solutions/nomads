@@ -6,15 +6,6 @@ import * as Types from './types';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const commonStyles = {
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  width: '100%',
-  height: '100%',
-};
-
 const Mapbox: SFC<Types.Props> = ({
   mapboxApiAccessToken,
   mapInteractions,
@@ -75,29 +66,17 @@ const Mapbox: SFC<Types.Props> = ({
       onViewportChange={handleOnViewPortChange}
       {...rest}
     >
-      <div
-        style={{ ...commonStyles, position: 'absolute', zIndex: markersIndex }}
-      >
-        {mapMarkers.map((mapMarker, index) =>
-          cloneElement(mapMarker, { key: index }),
-        )}
-      </div>
-      {isSourceVisible && (
-        <div
-          style={{ ...commonStyles, position: 'absolute', zIndex: sourceIndex }}
-        >
-          <Source type="geojson" data={collection}>
-            {layers.map(layer => (
-              <Layer key={layer.id} {...layer} />
-            ))}
-          </Source>
-        </div>
+      {mapMarkers.map((mapMarker, index) =>
+        cloneElement(mapMarker, { key: index }),
       )}
-      <div
-        style={{ ...commonStyles, position: 'absolute', zIndex: childrenIndex }}
-      >
-        {children && children({ viewport })}
-      </div>
+      {isSourceVisible && (
+        <Source type="geojson" data={collection}>
+          {layers.map(layer => (
+            <Layer key={layer.id} {...layer} />
+          ))}
+        </Source>
+      )}
+      {children && children({ viewport })}
     </ReactMapGL>
   );
 };
