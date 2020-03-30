@@ -63,16 +63,21 @@ const Mapbox: SFC<Types.Props> = ({
       onViewportChange={handleOnViewPortChange}
       {...rest}
     >
-      {mapMarkers.map((mapMarker, index) =>
-        cloneElement(mapMarker, { key: index }),
-      )}
+      <div style={{ position: 'absolute', zIndex: 5 }}>
+        {mapMarkers.map((mapMarker, index) =>
+          cloneElement(mapMarker, { key: index }),
+        )}
+      </div>
       {isSourceVisible && (
-        <Source type="geojson" data={collection}>
-          {layers.map(layer => (
-            <Layer key={layer.id} {...layer} />
-          ))}
-        </Source>
+        <div style={{ position: 'absolute', zIndex: 4 }}>
+          <Source type="geojson" data={collection}>
+            {layers.map(layer => (
+              <Layer key={layer.id} {...layer} />
+            ))}
+          </Source>
+        </div>
       )}
+      <div style={{ position: 'absolute', zIndex: 3 }}></div>
       {children && children({ viewport })}
     </ReactMapGL>
   );
