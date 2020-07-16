@@ -70,9 +70,9 @@ const Mapbox: SFC<Types.Props> = ({
         cloneElement(mapMarker, { key: index }),
       )}
       {isSourceVisible && (
-        <Source type="geojson" data={collection}>
+        <Source id="default-source" type="geojson" data={collection}>
           {layers.map(layer => (
-            <Layer key={layer.id} {...layer} />
+            <Layer source="default-source" key={layer.id} {...layer} />
           ))}
         </Source>
       )}
